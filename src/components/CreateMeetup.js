@@ -6,6 +6,7 @@ import {Form, ButtonGroup, FormCheck} from "react-bootstrap";
 import {Button} from "mdbreact";
 // import mapDispatchToProps from "react-redux/lib/connect/mapDispatchToProps";
 import MapboxAutocomplete from 'react-mapbox-autocomplete';
+import {API_URL} from "../actions/actionTypes";
 
 class CreateMeetup extends React.Component{
     // state = {
@@ -30,7 +31,7 @@ class CreateMeetup extends React.Component{
         })
     }
     postMeetup = (newMeetup) => {
-        axios.post('http://localhost:3000/api/meetups', {newMeetup: newMeetup})
+        axios.post(`${API_URL}meetups`, {newMeetup: newMeetup})
             .then(response => {
                 this.props.addMeetup(response.data)
             })

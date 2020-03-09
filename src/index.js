@@ -32,10 +32,11 @@ const userToken = localStorage.getItem('token')
 if(userToken) {
     store.dispatch({ type: AUTHENTICATED });
 }
+const API_URL =' https://lgbtq-meetup-api.herokuapp.com/'
 
 ReactDOM.render(
     <Provider store={store}>
-        <BrowserRouter history={history}>
+        <BrowserRouter history={history} apiUrl={API_URL}>
             <div>
                 <NavBar className='navbar'/>
                     <Route path='/meetups' component={requireAuth(MeetupsContainer)} />

@@ -9,7 +9,7 @@ import {
     CLEAR_MESSAGE
 } from "../actions/actionTypes";
 import uuid from 'uuid';
-
+const API_URL =' https://lgbtq-meetup-api.herokuapp.com/'
 export default function manageUsers(state = {
     users: [],
     authenticated: false,
