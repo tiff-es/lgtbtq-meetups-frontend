@@ -3,6 +3,7 @@ import {Toolbar, ButtonGroup, MenuList, GridListTileBar, CardHeader, TableHead} 
 import {Route, NavLink, Link,Switch, BrowserRouter as Router} from "react-router-dom";
 import pride from '../assets/img/pride.jpg'
 import {Navbar} from "mdbreact";
+import {Button} from "react-bootstrap";
 import 'bootstrap/dist/css/bootstrap.css';
 import '../assets/css/navbar.css'
 import {NavbarBrand, NavDropdown} from "react-bootstrap";
