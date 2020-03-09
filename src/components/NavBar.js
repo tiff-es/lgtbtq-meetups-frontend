@@ -1,7 +1,6 @@
 import React, {Component} from "react";
 import {Toolbar, ButtonGroup, MenuList, GridListTileBar, CardHeader, TableHead} from "@material-ui/core";
 import {Route, NavLink, Link,Switch, BrowserRouter as Router} from "react-router-dom";
-import Button from "@material-ui/core/button"
 import pride from '../assets/img/pride.jpg'
 import {Navbar} from "mdbreact";
 import 'bootstrap/dist/css/bootstrap.css';
