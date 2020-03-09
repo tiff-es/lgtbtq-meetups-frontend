@@ -19,6 +19,7 @@
     "history": "latest",
     "mapbox-gl": "^1.7.0",
     "material-kit-react": "^1.8.0",
+    "material-ui": "^0.20.2",
     "mdbreact": "^4.25.1",
     "mocha": "^7.0.0",
     "moment": "^2.24.0",

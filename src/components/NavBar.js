@@ -23,15 +23,15 @@ componentDidMount() {
     }
 
     render(){
-        const login = () => {  return(              <NavLink to="/login"><Button id='logIn'className='navbar-btn'><div className='nav-link'>Login</div></Button></NavLink>
+        const login = () => {  return(              <NavLink to="/login"><Button id='logIn'className='btn-toolbar bg-transparent badge-pill'><div className='nav-link font-weight-bold black-text'>Login</div></Button></NavLink>
         )}
 
-        const logOut = () => {  return(              <a><Button onClick={localStorage.removeItem('token') && this.props.history.push('/loginrequired')} className='navbar-btn'><div className='nav-link'>Log Out</div></Button></a>
+        const logOut = () => {  return(              <a><Button onClick={localStorage.removeItem('token') && this.props.history.push('/loginrequired')} className='btn-toolbar bg-transparent badge-pill'><div className='nav-link font-weight-bold black-text'>Log Out</div></Button></a>
         )}
 
 
         return(
-            <Navbar id='navbar' className='nav-flex-icons default-color'>
+            <Navbar id='navbar' className='nav-flex-icons aqua-gradient'>
 
                     <NavbarBrand>
                         <img src={pride} style={{width:75, marginTop: -7}} />
@@ -39,13 +39,13 @@ componentDidMount() {
                     </NavbarBrand>
 
                 {this.loggedIn}
-                <NavLink to="/"><Button className='nav-item'><div className='nav-link'>Home</div></Button></NavLink>
-                <NavLink to="/createaccount"><Button className='navbar-btn'><div className='nav-link'>Create Account</div></Button></NavLink>
+                <NavLink to="/"><Button className='btn-toolbar bg-transparent badge-pill'><div className='nav-link font-weight-bold black-text'>Home</div></Button></NavLink>
+                <NavLink to="/createaccount"><Button className='btn-toolbar bg-transparent badge-pill'><div className='nav-link font-weight-bold black-text'>Create Account</div></Button></NavLink>
                 { login()  }
-                <NavLink to="/meetups"><Button className='navbar-btn'><div className='nav-link'>Meetups</div></Button></NavLink>
+                <NavLink to="/meetups"><Button className='btn-toolbar bg-transparent badge-pill'><div className='nav-link font-weight-bold black-text'>Meetups</div></Button></NavLink>
 
-                <NavLink to="/createmeetup"><Button className='navbar-btn'><div className='nav-link'>Create Meetup</div></Button></NavLink>
-                {/*<NavLink to='/myprofile'><Button className='navbar-btn'><div className='nav-link'>My Profile </div> </Button> </NavLink>*/}
+                <NavLink to="/createmeetup"><Button className='btn-toolbar bg-transparent badge-pill'><div className='nav-link font-weight-bold black-text'>Create Meetup</div></Button></NavLink>
+                {/*<NavLink to='/myprofile'><Button className='btn btn-default'><div className='nav-link'>My Profile </div> </Button> </NavLink>*/}
                 {this.state.token ? logOut() : ''}
 
             </Navbar>
