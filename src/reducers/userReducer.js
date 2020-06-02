@@ -1,5 +1,6 @@
 import {
     ADD_USER,
+    GET_USER,
     GET_USERS,
     AUTHENTICATION_ERROR,
     LOGIN_AUTHENTICATED,
@@ -28,6 +29,8 @@ export default function manageUsers(state = {
     switch (action.type) {
         case SAVE_USER:
             return {...state, currentUser: action.user }
+        case GET_USER:
+            return {...state, currentUser: action.user}
         case GET_USERS:
             return {...state, users: action.users}
         case ADD_USER:

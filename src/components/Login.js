@@ -19,7 +19,6 @@ class Login extends React.Component{
     }
 
 componentWillUnmount(){
-    this.props.clearMessage()
 }
 
     handleInputChange = (event) => {

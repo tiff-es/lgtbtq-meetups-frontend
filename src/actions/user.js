@@ -6,7 +6,7 @@ import {
     LOGIN_AUTHENTICATED,
     SAVE_USER,
     API_URL,
-    SUCCESS_MESSAGE, CLEAR_MESSAGE
+    SUCCESS_MESSAGE, CLEAR_MESSAGE, GET_USER
 } from "./actionTypes";
 import axios from "axios";
 
@@ -26,6 +26,10 @@ export function saveUser(user) {
  export function getUsers(users) {
      return { type: GET_USERS, users: users }
  }
+export function getUser(user) {
+    return { type: GET_USER, currentUser: user }
+}
+
 export const axiosGetUsers = (users) => {
     return dispatch => {
         axios.get(`${API_URL}users`,{headers:               {  Authorization: window.localStorage.getItem('token')}
@@ -36,31 +40,7 @@ export const axiosGetUsers = (users) => {
             .catch(e => console.log(e))
     }
 }
-export const getProfileFetch = () => {
-    return dispatch => {
-        const token = localStorage.token;
-        if (token) {
-            return fetch(`${API_URL}users`, {
-                method: "GET",
-                headers: {
-                    'Content-Type': 'application/json',
-                    Accept: 'application/json',
-                    'Authorization': token
-                }
-            })
-                .then(resp => resp.json())
-                .then(data => {
-                    if (data.message) {
-                        // An error will occur if the token is invalid.
-                        // If this happens, you may want to remove the invalid token.
-                        localStorage.removeItem("token")
-                    } else {
-                        dispatch(loginUser(data.user))
-                    }
-                })
-        }
-    }
-}
+
 export const loginUser = (userInfo) => {
     return {type: LOGIN_AUTHENTICATED, currentUser: {userInfo}, success: 'Login Successful'
     }
@@ -107,6 +87,32 @@ export const loginSuccess = success => {
 }
 export const authenticated = () => {
      return {type: AUTHENTICATED}
+}
+
+export const getProfileFetch = () => {
+    return dispatch => {
+        const token = localStorage.token;
+        if (token) {
+            return fetch("http://localhost:3000/api/v1/profile", {
+                method: "GET",
+                headers: {
+                    'Content-Type': 'application/json',
+                    Accept: 'application/json',
+                    'Authorization': `Bearer ${token}`
+                }
+            })
+                .then(resp => resp.json())
+                .then(data => {
+                    if (data.message) {
+                        // An error will occur if the token is invalid.
+                        // If this happens, you may want to remove the invalid token.
+                        localStorage.removeItem("token")
+                    } else {
+                        dispatch(loginUser(data.user))
+                    }
+                })
+        }
+    }
 }
 export const userPostFetch = user => {
     return dispatch => {

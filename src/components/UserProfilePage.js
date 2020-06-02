@@ -5,17 +5,18 @@ import {connect} from "react-redux";
 import {CardTitle, MDBCardBody, MDBCardHeader, MDBCardTitle} from "mdbreact";
 import {Card} from "mdbreact";
 import {getMeetupLatLng} from "../actions/meetup";
-import {getUsers, loginUser, saveUser} from "../actions/user";
+import {getProfileFetch, getUsers, loginUser, saveUser} from "../actions/user";
 export default class UserProfilePage extends React.Component{
     // state = { users: []
     //     // username: '',
     //     //    password: ''
     // }
-// componentDidMount() {
-//
-// }
+
     componentDidMount() {
+        this.props.getProfileFetch()
+
         console.log(this.props.currentUser)
+
     }
 
     render() {
@@ -45,14 +46,14 @@ const mapStateToProps = (state) => {
        currentUser: state.currentUser.userInfo
     }
 }
-// const mapDispatchToProps = (dispatch) => {
-//
-//     return {
-//         saveUser: (user) => {
-//             dispatch(saveUser(user))
-//         }
-//     }
-// }
+const mapDispatchToProps = (dispatch) => {
+
+    return {
+        getProfileFetch: (user) => {
+            dispatch(getProfileFetch(user))
+        }
+    }
+}
 
 
-connect(null, mapStateToProps)(UserProfilePage)
+connect(mapDispatchToProps, mapStateToProps)(UserProfilePage)

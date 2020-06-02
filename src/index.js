@@ -19,7 +19,7 @@ import Login from "./components/Login";
 import UsersContainer from "./containers/UsersContainer";
 import MapComponent from "./components/MapComponent";
 import createHistory from "history/createBrowserHistory";
-import {AUTHENTICATED} from "./actions/actionTypes";
+import {AUTHENTICATED, SAVE_USER} from "./actions/actionTypes";
 import requireAuth from "./components/hoc/RequireAuth";
 import noRequireAuth from "./components/hoc/NoRequireAuth";
 import LoginRequired from "./components/LoginRequired";
@@ -30,9 +30,12 @@ const history = createHistory()
 const userToken = localStorage.getItem('token')
 
 if(userToken) {
-    store.dispatch({ type: AUTHENTICATED });
+    store.dispatch({ type: AUTHENTICATED})
+    store.dispatch({type: SAVE_USER})
 }
-const API_URL =' https://lgbtq-meetup-api.herokuapp.com/'
+// const API_URL =' https://lgbtq-meetup-api.herokuapp.com/'
+const API_URL =' http://localhost:3000/'
+
 
 ReactDOM.render(
     <Provider store={store}>
