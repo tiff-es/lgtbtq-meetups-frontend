@@ -2,43 +2,41 @@
 import React from "react";
 import NavBar from "./NavBar";
 import {connect} from "react-redux";
-import {CardTitle, MDBCardBody, MDBCardHeader, MDBCardTitle} from "mdbreact";
-import {Card} from "mdbreact";
-import {getMeetupLatLng} from "../actions/meetup";
-import {getProfileFetch, getUsers, loginUser, saveUser} from "../actions/user";
-export default class UserProfilePage extends React.Component{
+import {getProfileFetch, getUser, getUsers, loginUser, saveUser} from "../actions/user";
+import {MDBCard, MDBCardBody, MDBCardHeader, MDBCardTitle} from "mdbreact";
+export default class UserProfilePage extends React.Component {
     // state = { users: []
     //     // username: '',
     //     //    password: ''
     // }
 
     componentDidMount() {
-        this.props.getProfileFetch()
 
-        console.log(this.props.currentUser)
+        console.log(this.props.getUser())
 
     }
 
     render() {
         console.log(this.props.currentUser)
-        return(
+        return (
             <div id='profile main-container'>
-                <Card id='home-card'>
-                    <MDBCardTitle className='card-header text-lg-left' align='center' id='home-card header'><h2>My Profile</h2></MDBCardTitle>
+                <MDBCard id='home-card'>
+                    <MDBCardTitle className='card-header text-lg-left' align='center' id='home-card header'><h2>My
+                        Profile</h2></MDBCardTitle>
                     <MDBCardHeader className='card-header'>{`Welcome ${this.props.currentUser.name}`}</MDBCardHeader>
                     <MDBCardBody className='card-body'>
                         <p>
 
                         </p>
                     </MDBCardBody>
-                </Card>
+                </MDBCard>
                 {/*<button onClick={() => this.state.getUsers()}>Get Users</button>*/}
-
 
 
             </div>
 
-        )}
+        )
+    }
 }
 //
 const mapStateToProps = (state) => {
@@ -46,11 +44,12 @@ const mapStateToProps = (state) => {
        currentUser: state.currentUser.userInfo
     }
 }
+
 const mapDispatchToProps = (dispatch) => {
 
     return {
-        getProfileFetch: (user) => {
-            dispatch(getProfileFetch(user))
+        getUser: (currentUser) => {
+            dispatch(getUser(currentUser))
         }
     }
 }

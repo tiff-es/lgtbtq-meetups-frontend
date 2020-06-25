@@ -24,11 +24,10 @@ import requireAuth from "./components/hoc/RequireAuth";
 import noRequireAuth from "./components/hoc/NoRequireAuth";
 import LoginRequired from "./components/LoginRequired";
 import UserProfilePage from "./components/UserProfilePage";
-
+import { PersistGate } from 'redux-persist/integration/react'
 const store = configureStore()
 const history = createHistory()
 const userToken = localStorage.getItem('token')
-
 if(userToken) {
     store.dispatch({ type: AUTHENTICATED})
     store.dispatch({type: SAVE_USER})
@@ -39,11 +38,14 @@ const API_URL =' http://localhost:3000/'
 
 ReactDOM.render(
     <Provider store={store}>
+        {/*<PersistGate loading={null} persistor={persistor} >*/}
         <BrowserRouter history={history} apiUrl={API_URL}>
             <div>
                 <NavBar className='navbar'/>
                     <Route path='/meetups' component={requireAuth(MeetupsContainer)} />
-                    <Route exact path="/" component={requireAuth(Home)}/>
+                <Route path='/my_profile' component={requireAuth(UserProfilePage)} />
+
+                <Route exact path="/" component={requireAuth(Home)}/>
                     <Route path="/createaccount" component={noRequireAuth(CreateAccount)}/>
                     <Route path="/createmeetup" component={requireAuth(CreateMeetup)}/>
                     <Route path="/login" component={noRequireAuth(Login)}/>
@@ -58,6 +60,7 @@ ReactDOM.render(
                     </Route>
             </div>
         </BrowserRouter>
+        {/*</PersistGate>*/}
     </Provider>,
     document.getElementById("root")
 );

@@ -18,7 +18,7 @@
     "expect": "latest",
     "history": "latest",
     "mapbox-gl": "^1.7.0",
-    "material-kit-react": "^1.8.0",
+    "material-kit-react": "^1.9.0",
     "material-ui": "^0.20.2",
     "mdbreact": "^4.25.1",
     "mocha": "^7.0.0",
@@ -38,6 +38,7 @@
     "react-scripts": "3.3.0",
     "react-time": "^4.3.0",
     "redux": "^4.0.5",
+    "redux-persist": "^6.0.0",
     "redux-thunk": "^2.3.0",
     "redux-time": "0.0.29",
     "semantic": "0.0.1"
