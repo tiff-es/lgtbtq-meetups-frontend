@@ -25,6 +25,7 @@ import noRequireAuth from "./components/hoc/NoRequireAuth";
 import LoginRequired from "./components/LoginRequired";
 import UserProfilePage from "./components/UserProfilePage";
 import { PersistGate } from 'redux-persist/integration/react'
+import {useHistory} from "react-router";
 const store = configureStore()
 
 const userToken = localStorage.getItem('token')
