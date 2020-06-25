@@ -18,7 +18,7 @@ import CreateMeetup from "./components/CreateMeetup";
 import Login from "./components/Login";
 import UsersContainer from "./containers/UsersContainer";
 import MapComponent from "./components/MapComponent";
-import createHistory from "history/createBrowserHistory";
+import history from "./history";
 import {AUTHENTICATED, SAVE_USER} from "./actions/actionTypes";
 import requireAuth from "./components/hoc/RequireAuth";
 import noRequireAuth from "./components/hoc/NoRequireAuth";
@@ -26,7 +26,7 @@ import LoginRequired from "./components/LoginRequired";
 import UserProfilePage from "./components/UserProfilePage";
 import { PersistGate } from 'redux-persist/integration/react'
 const store = configureStore()
-const history = createHistory()
+
 const userToken = localStorage.getItem('token')
 if(userToken) {
     store.dispatch({ type: AUTHENTICATED})
