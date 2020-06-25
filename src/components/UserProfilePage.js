@@ -5,14 +5,11 @@ import {connect} from "react-redux";
 import {getProfileFetch, getUser, getUsers, loginUser, saveUser} from "../actions/user";
 import {MDBCard, MDBCardBody, MDBCardHeader, MDBCardTitle} from "mdbreact";
 export default class UserProfilePage extends React.Component {
-    // state = { users: []
-    //     // username: '',
-    //     //    password: ''
-    // }
+    state = {
 
+    }
     componentDidMount() {
 
-        console.log(this.props.getUser())
 
     }
 

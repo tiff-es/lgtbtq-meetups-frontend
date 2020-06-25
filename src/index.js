@@ -32,8 +32,8 @@ if(userToken) {
     store.dispatch({ type: AUTHENTICATED})
     store.dispatch({type: SAVE_USER})
 }
-// const API_URL =' https://lgbtq-meetup-api.herokuapp.com/'
-const API_URL =' http://localhost:3000/'
+const API_URL =' https://lgbtq-meetup-api.herokuapp.com/'
+// const API_URL =' http://localhost:3000/'
 
 
 ReactDOM.render(
