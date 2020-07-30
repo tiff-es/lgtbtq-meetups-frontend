@@ -4,7 +4,9 @@
 ## Visit web-application here: [LGBTQ+ Meet Link](https://lgbtq-meetups.herokuapp.com/) 
 
 ### This repository *only includes the front-end*, and is actively hosted on Heroku. See [Full LGBTQ+ Meet Repo](https://github.com/boostinwrx/LGBTQ-meetup-app) for the original repository including both the frontend and the backend.
- 
+----
+#### Note: I'm removing the outdated and obsolete front-end repository from the new branch of the LGBTQ+ Meet repo, it will now only contain the back-end while this is the front-end.
+ ----
  
  #### App Description:
 * Finally, a safe space for the LGBTQ+ community to create and find social meetups with gender affirming, supportive people near you!
