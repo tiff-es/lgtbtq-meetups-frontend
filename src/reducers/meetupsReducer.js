@@ -3,6 +3,7 @@ import {ADD_MEETUP, DEFAULT_MAP, UPDATE_MEETUP, GET_MEETUPS, GET_CATEGORIES, GET
 export default function manageMeetups(state = {
     meetups: [],
     newMeetup: {
+        user_id: null,
         location: '',
         lat: null,
         lon: null,

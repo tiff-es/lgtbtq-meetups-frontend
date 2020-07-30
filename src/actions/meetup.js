@@ -5,12 +5,19 @@ import {
     UPDATE_MEETUP,
     GET_CATEGORIES,
     GET_MEETUP_COORDINATES,
-    API_URL
+    API_URL, GET_USER
 } from "./actionTypes";
 import axios from "axios";
+import {getUser} from "./user";
+
 const addMeetup = (newMeetup) => {
-    return {type: ADD_MEETUP, newMeetup: newMeetup}
+    return {type: ADD_MEETUP, NewMeetup: newMeetup}
+
 }
+//
+// const getUserId = (userId) => {
+//         return {type: GET_USER}
+// }
 const getCategories = (categories) => {
     return {type: GET_CATEGORIES, categories: categories}
 }

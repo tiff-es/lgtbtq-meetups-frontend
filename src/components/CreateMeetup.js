@@ -7,11 +7,18 @@ import {Button} from "mdbreact";
 // import mapDispatchToProps from "react-redux/lib/connect/mapDispatchToProps";
 import MapboxAutocomplete from 'react-mapbox-autocomplete';
 import {API_URL} from "../actions/actionTypes";
+import {getUser} from "../actions/user";
 
 class CreateMeetup extends React.Component{
     // state = {
     //     location: []
     // }
+
+    componentDidMount() {
+        this.props.axiosGetCategories()
+        this.props.getUser()
+        console.log(this.props.currentUser)
+    }
     _suggestionSelect = (result, lat, lng, text) => {
        console.log(result)
         this.handleLocationChange(result, lat, lng)
@@ -44,9 +51,6 @@ class CreateMeetup extends React.Component{
     }
 
 
-    componentDidMount() {
-     this.props.axiosGetCategories()
-    }
 
     render(){
         return(
@@ -123,6 +127,9 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return{
+        getUser: (currentUser) => {
+            dispatch(getUser(currentUser))
+        },
         addMeetup: (newMeetup) => {
             dispatch(addMeetup(newMeetup))
         },
