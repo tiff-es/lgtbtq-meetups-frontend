@@ -5,7 +5,7 @@
 
 ### This repository *only includes the front-end*, and is actively hosted on Heroku. See [Full LGBTQ+ Meet Repo](https://github.com/boostinwrx/LGBTQ-meetup-app) for the original repository including both the frontend and the backend.
 ----
-#### Note: I'm removing the outdated and obsolete front-end repository from the new branch of the LGBTQ+ Meet repo, it will now only contain the back-end while this is the front-end.
+#### Note: I'm removing the outdated and obsolete front-end repository from the *`refactor`* branch of the **above mentioned** repo, it will soon only contain the back-end while this repository will contain the front-end.
  ----
  
  #### App Description:
