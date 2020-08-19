@@ -3,17 +3,20 @@
 ## Visit web-application here: [LGBTQ+ Meet Link](https://lgbtq-meetups.herokuapp.com/) 
 
 
+
+
+## See up-to-date readme
+### For full install instructions, full readme:
+* See [LGBTQ+ Meetups (refactor) Readme](https://github.com/boostinwrx/LGBTQ-meetup-app/refactor) to see the full readme, installation instructions, contribution guidelines, and more.
+
+
 ---
 
 
-## For full install instructions, full readme:
-
-See [LGBTQ+ Meetups (refactor) ](https://github.com/boostinwrx/LGBTQ-meetup-app/refactor) to see the full readme, installation instructions, contribution guidelines, and more.
-
-
-----
 #### Note: I'm removing the outdated and obsolete front-end repository from the *`refactor`* branch of the **above mentioned** repo, it will soon only contain the back-end while this repository will contain the front-end.
- ----
+
+
+ ---
  
  #### App Description:
 * Finally, a safe space for the LGBTQ+ community to create and find social meetups with gender affirming, supportive people near you!
