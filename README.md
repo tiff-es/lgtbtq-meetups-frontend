@@ -1,8 +1,7 @@
 #  [LGBTQ+ Meet](https://lgbtq-meetups.herokuapp.com/) (front-end repository)
 
-*See readme link below, this readme has been depracated*
+> *See readme link below, this readme has been **depracated***
 
----
 
 
 ## [Link to Full Readme](https://github.com/boostinwrx/LGBTQ-meetup-app/refactor)
@@ -11,9 +10,11 @@
 
 ---
  
+ 
 ## [Visit Live Application](https://lgbtq-meetups.herokuapp.com/) 
 
---
+
+
 
 ## [Back end repository](https://github.com/boostinwrx/LGBTQ-meetup-app/tree/refactor)
 
