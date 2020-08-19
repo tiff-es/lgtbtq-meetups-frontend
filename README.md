@@ -5,7 +5,7 @@
 
 ---
 
-## [Back end repository](https://github.com/boostinwrx/LGBTQ-meetup-app/refactor)
+## [Back end repository](https://github.com/boostinwrx/LGBTQ-meetup-app/tree/refactor)
 
 ---
 
