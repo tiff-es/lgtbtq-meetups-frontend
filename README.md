@@ -3,16 +3,14 @@
 ## Visit web-application
 * [LGBTQ+ Meet Link](https://lgbtq-meetups.herokuapp.com/) 
 
+---
 
-
-## Back end repository: 
-* https://github.com/boostinwrx/LGBTQ-meetup-app/tree/refactor
+## [Back end repository](https://github.com/boostinwrx/LGBTQ-meetup-app/refactor)
 
 ---
 
-# See [Full Readme](https://github.com/boostinwrx/LGBTQ-meetup-app/refactor)
-
-### Install instructions, technologies-used, contribution guidelines, and more
+## [Full Readme](https://github.com/boostinwrx/LGBTQ-meetup-app/refactor)
+* Install instructions, technologies-used, contribution guidelines, and more
 
 ---
 
