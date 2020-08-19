@@ -1,9 +1,16 @@
 #  [LGBTQ+ Meet](https://lgbtq-meetups.herokuapp.com/) 
-#### My Flatiron School Final Project (front-end)
  
 ## Visit web-application here: [LGBTQ+ Meet Link](https://lgbtq-meetups.herokuapp.com/) 
 
-### This repository *only includes the front-end*, and is actively hosted on Heroku. See [Full LGBTQ+ Meet Repo](https://github.com/boostinwrx/LGBTQ-meetup-app) for the original repository including both the frontend and the backend.
+
+---
+
+
+## For full install instructions, full readme:
+
+See [LGBTQ+ Meetups (refactor) ](https://github.com/boostinwrx/LGBTQ-meetup-app/refactor) to see the full readme, installation instructions, contribution guidelines, and more.
+
+
 ----
 #### Note: I'm removing the outdated and obsolete front-end repository from the *`refactor`* branch of the **above mentioned** repo, it will soon only contain the back-end while this repository will contain the front-end.
  ----
