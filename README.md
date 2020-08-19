@@ -4,7 +4,7 @@
 
 
 
-## [Link to Full Readme](https://github.com/boostinwrx/LGBTQ-meetup-app/refactor)
+## [Link to Full Readme](https://github.com/boostinwrx/LGBTQ-meetup-app/blob/refactor/README.md)
 * Install instructions, technologies-used, contribution guidelines, and more
 
 
