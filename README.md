@@ -1,11 +1,14 @@
 #  [LGBTQ+ Meet](https://lgbtq-meetups.herokuapp.com/) 
  
-## Visit web-application here: [LGBTQ+ Meet Link](https://lgbtq-meetups.herokuapp.com/) 
+## Visit web-application
+* [LGBTQ+ Meet Link](https://lgbtq-meetups.herokuapp.com/) 
 
 
+---
 
 
 ## See up-to-date readme
+
 ### For full install instructions, full readme:
 * See [LGBTQ+ Meetups (refactor) Readme](https://github.com/boostinwrx/LGBTQ-meetup-app/refactor) to see the full readme, installation instructions, contribution guidelines, and more.
 
