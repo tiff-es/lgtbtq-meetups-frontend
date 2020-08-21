@@ -27,7 +27,7 @@ class MeetupCard extends React.Component {
                 <MDBCardBody className='header'> Location: <b>{this.props.location}</b></MDBCardBody>
                 <MapComponent lat={this.props.lat} lon={this.props.lon} meetup={this.props}/>
                 {/* ^^  latitude, longitude, this.props passed down via this.props  ^^ */}
-                <MDBCardBody className='body'>Start Time: <b><Moment date={this.props.time} format='hh:mm A'> </Moment></b>
+                {/* Check this time parsing  */} <MDBCardBody className='body'>Start Time: <b><Moment date={this.props.time} format='hh:mm A'> </Moment></b>
                     <br/>Date: <b><Moment format='ddd MMM DD, YYYY'>{this.props.date}</Moment></b>
 
                 </MDBCardBody>
