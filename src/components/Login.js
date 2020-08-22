@@ -34,13 +34,19 @@ componentWillUnmount(){
         this.props.userLoginFetch(this.state)
 
 
-        setTimeout(() => {this.props.history.push('/') && this.props.clearMessage() }, 2000)
+this.successRedirect()
 
 
         // this.props.dispatch({type: 'LOGIN', currentUser: {username: this.state.username, password: this.state.username}})    }
     }
+
+    successRedirect = () => {
+        debugger
+        return  setTimeout(() => {this.props.history.push('/') && this.props.clearMessage() }, 2000)
+    }
     //wire up mapDispatchToProps
     render() {
+
         return(
             <div id='login main-container' className='modal-body'>
                 { (this.props.error) ?
@@ -51,8 +57,8 @@ componentWillUnmount(){
                 { (this.props.success !== '') ?
                     <MDBAlert id='success-alert' className="alert alert-success" role="alert">
                         You're Logged In! <br/>      {this.props.success}
+
                     </MDBAlert> : ''}
-                {}
 
 
 

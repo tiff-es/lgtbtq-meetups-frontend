@@ -15,8 +15,8 @@ export default function manageMeetups(state = {
     },
     categories: [],
     map: {
-        width: '50vh',
-        height:'40vw',
+        width: '80vh',
+        height:'50vw',
         location: 'Default @@INIT',
         lat:  38.900497,
         lon: -77.007507,
@@ -33,8 +33,8 @@ export default function manageMeetups(state = {
         // these are the default coordinates
         case DEFAULT_MAP:
             return {...state, map: {
-                width: '50vw',
-                    height: '40vh',
+                width: '80 %',
+                    height: '45vh',
                     location: 'DEFAULT_MAP COMPLETE',
                     lat: 38.900497,
                     lon: -77.007507,

@@ -8,6 +8,8 @@ import {
     API_URL,
     SUCCESS_MESSAGE, CLEAR_MESSAGE, GET_USER
 } from "./actionTypes";
+
+import history from "../history";
 import axios from "axios";
 
 // const addUser = (newUser) => {
@@ -133,7 +135,11 @@ export const userPostFetch = user => {
                 } else {
                     localStorage.setItem("token", data.jwt)
                     dispatch(saveUser(data.user))
+                    // console.log('User fetched, pushing to /')
                     dispatch(loginUser(data.user))
+                    // history.push('/')
+
+
                 }
             })
     }

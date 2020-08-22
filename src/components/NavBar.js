@@ -10,6 +10,7 @@ import {NavbarBrand, NavDropdown} from "react-bootstrap";
 import NavbarCollapse from "react-bootstrap/NavbarCollapse";
 import connect from "react-redux/lib/connect/connect";
 import {clearMessage, userLoginFetch} from "../actions/user";
+import Icon from '../assets/img/LGBTQ-meetups-icons_1_black_600-02.png'
 export default class NavBar extends Component {
 state = {
     token: null
@@ -34,7 +35,7 @@ componentDidMount() {
             <Navbar id='navbar' className='nav-flex-icons aqua-gradient'>
 
                     <NavbarBrand>
-                        <img src={pride} style={{width:75, marginTop: -7}} />
+                        <img src={Icon} style={{width:75, marginTop: -7}} />
                         LGBTQ+ Meetups!
                     </NavbarBrand>
 
