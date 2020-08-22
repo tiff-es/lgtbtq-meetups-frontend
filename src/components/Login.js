@@ -41,8 +41,9 @@ this.successRedirect()
     }
 
     successRedirect = () => {
-        debugger
-        return  setTimeout(() => {this.props.history.push('/') && this.props.clearMessage() }, 2000)
+        // Utilize recursion until success occurs, then redirect
+           {(this.props.success !== '') ?  setTimeout(() => { this.props.history.push('/') && this.props.clearMessage() }, 1000) : setTimeout(() => { this.successRedirect() }, 7000)}
+
     }
     //wire up mapDispatchToProps
     render() {
