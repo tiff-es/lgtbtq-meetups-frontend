@@ -61,7 +61,8 @@ const mapDispatchToProps = (dispatch) => {
 }
 
 const Map = ReactMapboxGl({
-    accessToken: "pk.eyJ1IjoidGlmZmFueWFicmFoYW0iLCJhIjoiY2s1N2x6MnRpMDU3MjNscHMxdGRhcTZ6NiJ9.7D9NUZEVIS2O86VocLUXPQ\n.p6GGlfyV-WksaDV_KdN27A"})
+    // accessToken: "pk.eyJ1IjoidGlmZmFueWFicmFoYW0iLCJhIjoiY2s1N2x6MnRpMDU3MjNscHMxdGRhcTZ6NiJ9.7D9NUZEVIS2O86VocLUXPQ\n.p6GGlfyV-WksaDV_KdN27A"
+    accessToken: "sk.eyJ1IjoidGlmZmFueWFicmFoYW0iLCJhIjoiY2tlNHh3Y3o5MDVyMDJ5cjMwMTdic3V2ZiJ9.ZxvhXcsrP7r5DzAm3HAaTw"})
 
 
 export default connect( mapStateToProps,mapDispatchToProps)(MapComponent)
