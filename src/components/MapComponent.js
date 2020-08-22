@@ -60,8 +60,8 @@ const mapDispatchToProps = (dispatch) => {
     }
 }
 
+
 const Map = ReactMapboxGl({
     accessToken: "pk.eyJ1IjoidGlmZmFueWFicmFoYW0iLCJhIjoiY2tlNHl0bmc0MDBnYjJxdGZxajY4dmxuOSJ9.o0VWhCTv4_hvqVVXobVuoQ"})
-
 
 export default connect( mapStateToProps,mapDispatchToProps)(MapComponent)
