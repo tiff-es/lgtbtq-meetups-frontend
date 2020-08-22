@@ -34,18 +34,18 @@ componentWillUnmount(){
         this.props.userLoginFetch(this.state)
 
 
+//      vvv  Recursive function, if success has not yet occurred, calls upon itself until success !== ''
 this.successRedirect()
 
 
-        // this.props.dispatch({type: 'LOGIN', currentUser: {username: this.state.username, password: this.state.username}})    }
     }
 
     successRedirect = () => {
-        // Utilize recursion until success occurs, then redirect
+        // FIX FOR TIMEOUT ON API: Utilize recursion until success occurs, then redirect in 1s
            {(this.props.success !== '') ?  setTimeout(() => { this.props.history.push('/') && this.props.clearMessage() }, 1000) : setTimeout(() => { this.successRedirect() }, 7000)}
 
     }
-    //wire up mapDispatchToProps
+
     render() {
 
         return(
