@@ -3,7 +3,6 @@ import React,  { useState } from "react";
 import {connect} from "react-redux";
 import {axiosGetUsers} from "../actions/user";
 import {getMapDefault, getMeetupLatLng} from "../actions/meetup";
-import mapboxgl from "mapbox-gl";
 import icon from '../assets/img/pindrop-512.png'
 class MapComponent extends React.Component {
 state = {
@@ -24,6 +23,7 @@ state = {
 
 
             <Map
+                accessToken={"pk.eyJ1IjoidGlmZmFueWFicmFoYW0iLCJhIjoiY2tlNHl0bmc0MDBnYjJxdGZxajY4dmxuOSJ9.o0VWhCTv4_hvqVVXobVuoQ"}
                 zoom={this.props.map.zoom}
                 center={[this.props.lon, this.props.lat]}
                    // ^^ Center from Lat/Lon that was recieved from MeetupCard  ^^
