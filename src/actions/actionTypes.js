@@ -20,5 +20,5 @@ export const SUCCESS_MESSAGE = 'SUCCESS_MESSAGE'
 
 export const CLEAR_MESSAGE = 'CLEAR_MESSAGE'
 
-// export const API_URL =' https://lgbtq-meetup-api.herokuapp.com/api/'
-export const API_URL =' http://localhost:3000/api/'
+export const API_URL =' https://lgbtq-meetup-api.herokuapp.com/api/'
+// export const API_URL =' http://localhost:3000/api/'
