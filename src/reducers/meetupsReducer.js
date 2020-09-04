@@ -79,18 +79,6 @@ export default function manageMeetups(state = {
     }
 }
 
-// return array.map((item, index) => {
-//     if (index !== action.index) {
-//
-//         return item
-//     }
-//
-//     return {
-//         ...item,
-//         ...action.item
-//     }
-// })
-// }
 // #Immutable Update Utility Libraries
 // Because writing immutable update code can become tedious, there are a number of utility libraries that try to abstract out the process. These libraries vary in APIs and usage, but all try to provide a shorter and more succinct way of writing these updates. For example, Immer makes immutable updates a simple function and plain JavaScript objects:
 //

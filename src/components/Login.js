@@ -42,7 +42,7 @@ this.successRedirect()
 
     successRedirect = () => {
         // FIX FOR TIMEOUT ON API: Utilize recursion until success occurs, then redirect in 1s
-           {(this.props.success !== '') ?  setTimeout(() => { this.props.history.push('/') && this.props.clearMessage() }, 1000) : setTimeout(() => { this.successRedirect() }, 7000)}
+           {(this.props.success !== '' || null) ?  setTimeout(() => { this.props.history.push('/') && this.props.clearMessage() }, 1000) : setTimeout(() => { this.successRedirect() && console.log('Sever warming up')}, 3000)}
 
     }
 

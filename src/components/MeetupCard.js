@@ -17,6 +17,7 @@ class MeetupCard extends React.Component {
         //   }))
         //     console.log('liked',this.state.liked)
         //
+        const timeToFormat = this.props.time
         // }
         return (
             <MDBCard className='card'>
@@ -27,7 +28,8 @@ class MeetupCard extends React.Component {
                 <MDBCardBody className='header'> Location: <b>{this.props.location}</b></MDBCardBody>
                 <MapComponent lat={this.props.lat} lon={this.props.lon} meetup={this.props}/>
                 {/* ^^  latitude, longitude, this.props passed down via this.props  ^^ */}
-                {/* Check this time parsing  */} <MDBCardBody className='body'>Start Time: <b><Moment date={this.props.time} format='hh:mm A'> </Moment></b>
+
+                {/* Check this time parsing  */} <MDBCardBody className='body'>Start Time: <b><Moment add={{ hours: 5 }}format='hh:mm A'>{timeToFormat}</Moment></b>
                     <br/>Date: <b><Moment format='ddd MMM DD, YYYY'>{this.props.date}</Moment></b>
 
                 </MDBCardBody>
