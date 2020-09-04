@@ -1,6 +1,6 @@
  <img width='200px' src="https://lh3.googleusercontent.com/pw/ACtC-3eL9FsncUFUdmAWA6DrkjUXHkAZyWIZMWWogORhN5bXjMLH6DJq0ICrvkqoHFFvwpTEWi2XIoPBm7-H5fev3W_HyNuG2e2iWmlZNNsNMB23T3CeVVKtfAoSRisBfpH7AMLPvW2CNykBS7lszVKz-OtJMQ=s1680-no?authuser=0"/>
 
-#  [LGBTQ+ Meet](https://lgbtq-meetups.herokuapp.com/) (front-end repository)
+#  LGBTQ+ Meet *(front-end repository)*
 
 > *See readme link below, this readme has been **depracated***
 
