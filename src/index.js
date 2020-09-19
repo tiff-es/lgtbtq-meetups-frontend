@@ -28,10 +28,10 @@ import { PersistGate } from 'redux-persist/integration/react'
 import {useHistory} from "react-router";
 const store = configureStore()
 
-// moved userToken to App && changed API_URL
+// moved userToken to App && changed API_URLtro
 // const API_URL =' https://lgbtq-meetup-api.herokuapp.com/'
 const API_URL =' http://localhost:3000/'
-]
+
 
 ReactDOM.render(
     <Provider store={store}>
