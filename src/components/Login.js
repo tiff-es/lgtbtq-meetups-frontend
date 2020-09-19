@@ -4,22 +4,28 @@ import {connect} from "react-redux";
 import {Link} from "react-router-dom";
 import {Alert, Form, Popover} from "react-bootstrap";
 import {Button, MDBAlert} from "mdbreact";
-
+import currentUserCallback from '../App'
 import axios from 'axios'
 import {login} from '../actions/login'
-import {clearMessage, userLoginFetch} from "../actions/user";
+import {clearMessage, saveUser, userLoginFetch} from "../actions/user";
 import {useHistory} from "react-router";
 // send JWT as a header in every request sent to the backend
 
 
 class Login extends React.Component{
-    state = {
-        username: "",
-        password: "",
-        success: ''
-    }
+  constructor(props) {
+      super(props);
+      this.state = {
+          username: "",
+          password: "",
+          success: '',
+          ...this.state
+      }
+  }
+
 
 componentWillUnmount(){
+
 }
 
     handleInputChange = (event) => {
@@ -41,9 +47,10 @@ this.successRedirect()
     }
 
     successRedirect = () => {
+       let user = this.props.currentUser
+     this.setState({currentUser: this.props.currentUser})
         // FIX FOR TIMEOUT ON API: Utilize recursion until success occurs, then redirect in 1s
-           {(this.props.success !== '' || null) ?  setTimeout(() => { this.props.history.push('/') && this.props.clearMessage() }, 1000) : setTimeout(() => { this.successRedirect() && console.log('Sever warming up')}, 3000)}
-
+           {(this.props.success !== '' || this.props.success  == null) ?  setTimeout(() => { this.props.history.push('/') && this.props.clearMessage() }, 1000) : setTimeout(() => { this.successRedirect() && console.log('Sever warming up')}, 1000)}
     }
 
     render() {
@@ -90,14 +97,17 @@ this.successRedirect()
 
 const mapStateToProps = (state) => {
     return {
+        currentUser: state.users.currentUser,
         error: state.users.error,
-        success: state.users.success
+        success: state.users.success,
+        ...state
     }
 }
 const mapDispatchToProps = (dispatch) => {
     return {
         userLoginFetch: (userInfo) => {
             dispatch(userLoginFetch(userInfo))
+
         },
         clearMessage: () => {dispatch(clearMessage())}
     };

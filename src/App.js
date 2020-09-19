@@ -19,12 +19,21 @@ import {AUTHENTICATED, SAVE_USER} from "./actions/actionTypes";
 // cons
 
 class App extends React.Component {
+state = {
+    currentUser: null
+}
+
+
     componentDidMount = () => {
         this.props.getProfileFetch()
+        console.log(this.props)
     //    this seems to be properly fetching profile after migration from index
     }
 
     render() {
+        const currentUserCallback = (currentUser) =>{
+            debugger
+        }
 
         return (
 
@@ -33,10 +42,10 @@ class App extends React.Component {
                 <Route path='/meetups' component={requireAuth(MeetupsContainer)}/>
                 <Route path='/my_profile' component={requireAuth(UserProfilePage)}/>
 
-                <Route exact path="/" component={requireAuth(Home)}/>
+                <Route exact path="/" component={requireAuth(Home)} />
                 <Route path="/createaccount" component={noRequireAuth(CreateAccount)}/>
                 <Route path="/createmeetup" component={requireAuth(CreateMeetup)}/>
-                <Route path="/login" component={noRequireAuth(Login)}/>
+                <Route path="/login"currentUserCallback={()=>this.currentUserCallback} component={noRequireAuth(Login)}/>
                 {/* Wrap 37-42 in conditional to see if token is in localStorage otherwise route to login*/}
                 <Route path='/myprofile' currentUser={this.props.currentUser} component={requireAuth(UserProfilePage) }/>
                 {/*<Route path='/meetups' component={MeetupsContainer}/>*/}

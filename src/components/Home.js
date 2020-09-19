@@ -4,14 +4,13 @@ import {connect} from "react-redux";
 import {CardTitle, MDBCardBody, MDBCardHeader, MDBCardTitle} from "mdbreact";
 import {Card} from "mdbreact";
 import {Jumbotron, Button,Carousel} from "react-bootstrap";
-export default class Home extends React.Component{
-    // state = { users: []
-    //     // username: '',
-    //     //    password: ''
-    // }
-// componentDidMount() {
-//
-// }
+import {getUser} from "../actions/user";
+class Home extends React.Component{
+
+
+    componentWillMount() {
+
+    }
 
     render() {
         return(
@@ -97,7 +96,19 @@ export default class Home extends React.Component{
 }
 //
 
+const mapStateToProps = (state) => {
+    return {
+        currentUser: state.users.currentUser}
+}
+const mapDispatchToProps = (dispatch) => {
+    return {
+        getUser: (currentUser) => {
+            dispatch(getUser(currentUser))
+        }
+    }
 
 
 
-connect()(Home)
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Home)

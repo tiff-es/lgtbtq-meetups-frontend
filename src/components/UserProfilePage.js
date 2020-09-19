@@ -4,6 +4,7 @@ import NavBar from "./NavBar";
 import {connect} from "react-redux";
 import {getProfileFetch, getUser, getUsers, loginUser, saveUser} from "../actions/user";
 import {MDBCard, MDBCardBody, MDBCardHeader, MDBCardTitle} from "mdbreact";
+import mapStateToProps from "react-redux/lib/connect/mapStateToProps";
 export default class UserProfilePage extends React.Component {
 
 componentWillMount() {
@@ -52,4 +53,4 @@ const mapDispatchToProps = (dispatch) => {
 }
 
 
-connect(null, mapDispatchToProps)(UserProfilePage)
+connect(mapStateToProps, mapDispatchToProps)(UserProfilePage)
