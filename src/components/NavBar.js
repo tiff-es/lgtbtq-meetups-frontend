@@ -2,7 +2,7 @@ import React, {Component} from "react";
 import {Toolbar, ButtonGroup, MenuList, GridListTileBar, CardHeader, TableHead} from "@material-ui/core";
 import {Route, NavLink, Link,Switch, BrowserRouter as Router} from "react-router-dom";
 import pride from '../assets/img/pride.jpg'
-import {Navbar} from "mdbreact";
+import  {MDBNavbar} from "mdbreact";
 import {Button} from "react-bootstrap";
 import 'bootstrap/dist/css/bootstrap.css';
 import '../assets/css/navbar.css'
@@ -24,15 +24,15 @@ componentDidMount() {
     }
 
     render(){
-        const login = () => {  return(              <NavLink to="/login"><Button id='logIn'className='btn-toolbar bg-transparent badge-pill'><div className='nav-link font-weight-bold black-text'>Login</div></Button></NavLink>
+        const login = () => {  return(              <NavLink to="/login"><Button id='logIn'className='nav-pills'><div className='nav-fill'>Login</div></Button></NavLink>
         )}
 
-        const logOut = () => {  return(              <a><Button onClick={localStorage.removeItem('token') && this.props.history.push('/loginrequired')} className='btn-toolbar bg-transparent badge-pill'><div className='nav-link font-weight-bold black-text'>Log Out</div></Button></a>
+        const logOut = () => {  return(              <a><Button onClick={localStorage.removeItem('token') && this.props.history.push('/loginrequired')} className='nav-fill'><div className='nav-link font-weight-bold black-text'>Log Out</div></Button></a>
         )}
 
 
         return(
-            <Navbar id='navbar' className='nav-flex-icons aqua-gradient'>
+            <MDBNavbar id='navbar' className='nav-flex-icons aqua-gradient'>
 
                     <NavbarBrand>
                         <img src={Icon} style={{width:75, marginTop: -7}} />
@@ -40,16 +40,16 @@ componentDidMount() {
                     </NavbarBrand>
 
                 {this.loggedIn}
-                <NavLink to="/"><Button className='btn-toolbar bg-transparent badge-pill'><div className='nav-link font-weight-bold black-text'>Home</div></Button></NavLink>
-                <NavLink to="/createaccount"><Button className='btn-toolbar bg-transparent badge-pill'><div className='nav-link font-weight-bold black-text'>Create Account</div></Button></NavLink>
+                <NavLink to="/"><Button className='nav-pills'><div className='nav-fill'>Home</div></Button></NavLink>
+                <NavLink to="/createaccount"><Button className='nav-pills'><div className='nav-fill '>Create Account</div></Button></NavLink>
                 { login()  }
-                <NavLink to="/meetups"><Button className='btn-toolbar bg-transparent badge-pill'><div className='nav-link font-weight-bold black-text'>Meetups</div></Button></NavLink>
+                <NavLink to="/meetups"><Button className='nav-pills'><div className='nav-fill'>Meetups</div></Button></NavLink>
 
-                <NavLink to="/createmeetup"><Button className='btn-toolbar bg-transparent badge-pill'><div className='nav-link font-weight-bold black-text'>Create Meetup</div></Button></NavLink>
+                <NavLink to="/createmeetup"><Button className=' nav-pills '><div className='nav-fill'>Create Meetup</div></Button></NavLink>
                 {/*<NavLink to='/myprofile'><Button className='btn btn-default'><div className='nav-link'>My Profile </div> </Button> </NavLink>*/}
                 {this.state.token ? logOut() : ''}
 
-            </Navbar>
+            </MDBNavbar>
 
 
 
@@ -64,4 +64,4 @@ const mapStateToProps = (state) => {
 }
 
 
-connect (mapStateToProps)(Navbar)
+connect (mapStateToProps)(NavBar)
