@@ -3,7 +3,7 @@ export const GET_USER = 'GET_USER'
 
 export const GET_USERS = 'GET_USERS'
 export const ADD_USER = 'ADD_USER'
-export const LOGIN = 'LOGIN'
+export const LOGIN_USER = 'LOGIN_USER'
 
 export const GET_MEETUPS = 'GET_MEETUPS'
 export const ADD_MEETUP = 'ADD_MEETUP'
@@ -20,5 +20,5 @@ export const SUCCESS_MESSAGE = 'SUCCESS_MESSAGE'
 
 export const CLEAR_MESSAGE = 'CLEAR_MESSAGE'
 
-export const API_URL =' https://lgbtq-meetup-api.herokuapp.com/api/'
-// export const API_URL =' http://localhost:3000/api/'
+// export const API_URL =' https://lgbtq-meetup-api.herokuapp.com/api/'
+export const API_URL =' http://localhost:3000/api/'

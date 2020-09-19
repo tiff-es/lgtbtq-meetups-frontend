@@ -1,58 +1,61 @@
-// import React, {useState} from 'react';
-// import './assets/css/App.css';
-// import {BrowserRouter, Route, Router, Switch} from "react-router-dom";
-// import {connect} from "react-redux";
-// import Login from "./components/Login";
-// import createHistory from "history/createBrowserHistory";
-// import Home from "./components/Home";
-// import CreateAccount from "./components/CreateAccount";
-// import CreateMeetup from "./components/CreateMeetup";
-// import UsersContainer from "./containers/UsersContainer";
-//
-// import NavBar from "./components/NavBar"
-// import MeetupsContainer from './containers/MeetupsContainer'
-//
-// import MapComponent from "./components/MapComponent";
-// import {AuthContext} from "./auth";
-// import PrivateRoute from "./PrivateRoute";
-//
-//
-// function App(props) {
-//     // localStorage.getItem('token') === nil ? :
-//
-//     return (
-//             // <BrowserRouter history={history}>
-//             //     <div>
-//             //         <NavBar className='navbar'/>
-//             //
-//             //         <Switch>
-//             //             <Route path='/meetups' component={MeetupsContainer} />
-//             //
-//             //             <Route exact path="/" component={Home}/>
-//             //             <Route path="/createaccount" component={CreateAccount}/>
-//             //             <Route path="/createmeetup" component={CreateMeetup}/>
-//             //
-//             //             <Route path="/login" component={Login}/>
-//             //             {/* Wrap 37-42 in conditional to see if token is in localStorage otherwise route to login*/}
-//             //             <Route path='/users' component={UsersContainer}/>
-//             //             {/*<Route path='/meetups' component={MeetupsContainer}/>*/}
-//             //             <Route path='/map' component={MapComponent}/>
-//             //             <Route path="/*" component={() => 'NOT FOUND'}/>
-//             //         </Switch>
-//             //     </div>
-//             // </BrowserRouter>
-//
-//     )
-//
-// }
-//
-// const mapStateToProps = (state) => {
-//     console.log(state)
-//
-//     return {
-//         isLoggedIn: state.users.isLoggedIn
-//         // isLoggedIn: state.currentUser
-//     }
-// }
-//
-// export default connect(mapStateToProps)(App);
+import React, {useState} from 'react';
+import './assets/css/App.css';
+import {connect} from "react-redux";
+import NavBar from "./components/NavBar";
+import {Redirect, Route} from "react-router-dom";
+import requireAuth from "./components/hoc/RequireAuth";
+import MeetupsContainer from "./containers/MeetupsContainer";
+import UserProfilePage from "./components/UserProfilePage";
+import Home from "./components/Home";
+import noRequireAuth from "./components/hoc/NoRequireAuth";
+import CreateAccount from "./components/CreateAccount";
+import CreateMeetup from "./components/CreateMeetup";
+import Login from "./components/Login";
+import MapComponent from "./components/MapComponent";
+import LoginRequired from "./components/LoginRequired";
+import {getProfileFetch} from "./actions/user";
+import {AUTHENTICATED, SAVE_USER} from "./actions/actionTypes";
+
+// cons
+
+class App extends React.Component {
+    componentDidMount = () => {
+        this.props.getProfileFetch()
+    //    this seems to be properly fetching profile after migration from index
+    }
+
+    render() {
+
+        return (
+
+            <div>
+                <NavBar className='navbar'/>
+                <Route path='/meetups' component={requireAuth(MeetupsContainer)}/>
+                <Route path='/my_profile' component={requireAuth(UserProfilePage)}/>
+
+                <Route exact path="/" component={requireAuth(Home)}/>
+                <Route path="/createaccount" component={noRequireAuth(CreateAccount)}/>
+                <Route path="/createmeetup" component={requireAuth(CreateMeetup)}/>
+                <Route path="/login" component={noRequireAuth(Login)}/>
+                {/* Wrap 37-42 in conditional to see if token is in localStorage otherwise route to login*/}
+                <Route path='/myprofile' currentUser={this.props.currentUser} component={requireAuth(UserProfilePage) }/>
+                {/*<Route path='/meetups' component={MeetupsContainer}/>*/}
+                <Route path='/map' component={MapComponent}/>
+                <Route path='/loginrequired' component={noRequireAuth(LoginRequired)}/>
+
+                <Route path="/*" component={Home}>
+                    <Redirect to={'/'}/>
+                </Route>
+            </div>
+        )
+
+    }
+}
+const mapStateToProps = state => ({
+    currentUser: state.users.currentUser
+})
+
+const mapDispatchToProps = dispatch => ({
+    getProfileFetch: () => dispatch(getProfileFetch())
+})
+export default connect(mapStateToProps, mapDispatchToProps)(App);

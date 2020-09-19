@@ -95,13 +95,13 @@ export const getProfileFetch = () => {
     return dispatch => {
         const token = localStorage.token;
         if (token) {
-            return fetch("http://localhost:3000/api/v1/profile", {
+            return fetch("http://localhost:3000/api/profile", {
                 method: "GET",
                 headers: {
                     'Content-Type': 'application/json',
                     Accept: 'application/json',
-                    'Authorization': `Bearer ${token}`
-                }
+                    Authorization: window.localStorage.getItem('token')
+                },
             })
                 .then(resp => resp.json())
                 .then(data => {
@@ -110,7 +110,7 @@ export const getProfileFetch = () => {
                         // If this happens, you may want to remove the invalid token.
                         localStorage.removeItem("token")
                     } else {
-                        dispatch(loginUser(data.user))
+                        dispatch(saveUser(data.user))
                     }
                 })
         }

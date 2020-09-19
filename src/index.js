@@ -28,38 +28,36 @@ import { PersistGate } from 'redux-persist/integration/react'
 import {useHistory} from "react-router";
 const store = configureStore()
 
-const userToken = localStorage.getItem('token')
-if(userToken) {
-    store.dispatch({ type: AUTHENTICATED})
-    store.dispatch({type: SAVE_USER})
-}
-const API_URL =' https://lgbtq-meetup-api.herokuapp.com/'
-// const API_URL =' http://localhost:3000/'
-
+// moved userToken to App && changed API_URL
+// const API_URL =' https://lgbtq-meetup-api.herokuapp.com/'
+const API_URL =' http://localhost:3000/'
+]
 
 ReactDOM.render(
     <Provider store={store}>
         {/*<PersistGate loading={null} persistor={persistor} >*/}
         <BrowserRouter history={history} apiUrl={API_URL}>
-            <div>
-                <NavBar className='navbar'/>
-                    <Route path='/meetups' component={requireAuth(MeetupsContainer)} />
-                <Route path='/my_profile' component={requireAuth(UserProfilePage)} />
+            <App store={store}/>
 
-                <Route exact path="/" component={requireAuth(Home)}/>
-                    <Route path="/createaccount" component={noRequireAuth(CreateAccount)}/>
-                    <Route path="/createmeetup" component={requireAuth(CreateMeetup)}/>
-                    <Route path="/login" component={noRequireAuth(Login)}/>
-                    {/* Wrap 37-42 in conditional to see if token is in localStorage otherwise route to login*/}
-                    <Route path='/myprofile' component={requireAuth(UserProfilePage)}/>
-                    {/*<Route path='/meetups' component={MeetupsContainer}/>*/}
-                    <Route path='/map' component={MapComponent}/>
-                <Route path='/loginrequired' component={noRequireAuth(LoginRequired)}/>
+            { /*VVV VV V  VV      MOVED TO APP  VV     VV VV VV */ }
+            {/*    <NavBar className='navbar'/>*/}
+            {/*        <Route path='/meetups' component={requireAuth(MeetupsContainer)} />*/}
+            {/*    <Route path='/my_profile' component={requireAuth(UserProfilePage)} />*/}
 
-                <Route  path="/*" component={Home}>
-                        <Redirect to={'/'}/>
-                    </Route>
-            </div>
+            {/*    <Route exact path="/" component={requireAuth(Home)}/>*/}
+            {/*        <Route path="/createaccount" component={noRequireAuth(CreateAccount)}/>*/}
+            {/*        <Route path="/createmeetup" component={requireAuth(CreateMeetup)}/>*/}
+            {/*        <Route path="/login" component={noRequireAuth(Login)}/>*/}
+            {/*        /!* Wrap 37-42 in conditional to see if token is in localStorage otherwise route to login*!/*/}
+            {/*        <Route path='/myprofile' component={requireAuth(UserProfilePage)}/>*/}
+            {/*        /!*<Route path='/meetups' component={MeetupsContainer}/>*!/*/}
+            {/*        <Route path='/map' component={MapComponent}/>*/}
+            {/*    <Route path='/loginrequired' component={noRequireAuth(LoginRequired)}/>*/}
+
+            {/*    <Route  path="/*" component={Home}>*/}
+            {/*            <Redirect to={'/'}/>*/}
+            {/*        </Route>*/}
+            {/*</App>*/}
         </BrowserRouter>
         {/*</PersistGate>*/}
     </Provider>,

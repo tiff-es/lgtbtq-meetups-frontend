@@ -28,7 +28,7 @@ export default function manageUsers(state = {
 }, action){
     switch (action.type) {
         case SAVE_USER:
-            return {...state, currentUser: action.user }
+            return {...state, currentUser: action.user}
         case GET_USER:
             return {...state, currentUser: action.user}
         case GET_USERS:

@@ -5,13 +5,13 @@ import {connect} from "react-redux";
 import {getProfileFetch, getUser, getUsers, loginUser, saveUser} from "../actions/user";
 import {MDBCard, MDBCardBody, MDBCardHeader, MDBCardTitle} from "mdbreact";
 export default class UserProfilePage extends React.Component {
-    state = {
 
-    }
-    componentDidMount() {
+componentWillMount() {
+//  ISSUE:    CURRENTUSER DOES NOT PROPOGATE TO THIS CLASS
 
+    // debugger
+}
 
-    }
 
     render() {
         console.log(this.props.currentUser)
@@ -36,20 +36,20 @@ export default class UserProfilePage extends React.Component {
     }
 }
 //
-const mapStateToProps = (state) => {
-    return {
-       currentUser: state.currentUser.userInfo
-    }
-}
+// const mapStateToProps = (state) => {
+//     return {
+//        currentUser: state.users.currentUser
+//     }
+// }
 
 const mapDispatchToProps = (dispatch) => {
 
     return {
-        getUser: (currentUser) => {
-            dispatch(getUser(currentUser))
+        getProfileFetch: (currentUser) => {
+            dispatch(getProfileFetch(currentUser))
         }
     }
 }
 
 
-connect(mapDispatchToProps, mapStateToProps)(UserProfilePage)
+connect(null, mapDispatchToProps)(UserProfilePage)
