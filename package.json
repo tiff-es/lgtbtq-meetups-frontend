@@ -23,7 +23,7 @@
     "material-ui": "^0.20.2",
     "mdbreact": "^4.27.0",
     "mocha": "^7.2.0",
-    "moment": "^2.27.0",
+    "moment": "^2.29.2",
     "prop-types": "latest",
     "rc-datetime-picker": "^1.6.1",
     "react": "^16.13.1",
